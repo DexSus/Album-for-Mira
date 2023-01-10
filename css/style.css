@@ -1,0 +1,140 @@
+@keyframes animation{
+    from{opacity:0; -webkit-transform:scale(1.2) rotateX(45deg);transform:scale(1.2) rotateX(45deg);
+    } 
+    to{ }
+}
+
+:root {
+	--index: calc(1vw + 1vh);
+	--text: #e7e7e0;
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+body {
+    background-image: linear-gradient( #0f0c29, #302b63, #24243e);
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow:hidden;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.slider div p{
+    color:#1c1c1c;
+    bottom:-75px;
+    font-family:font; 
+    font-size:22px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.slider{
+    animation: animation ease 1s;
+    animation-delay:.8s;
+    animation-fill-mode:backwards;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height:720px;
+    width:540px;
+
+    perspective:1000px;
+    transition:ease-in-out .2s;
+}
+
+.slide img { 
+    text-align:center;
+    width:100%;
+    height:100%;
+    -moz-user-drag:none;
+    border-radius:5px; 
+}
+
+.slide{
+    -webkit-user-select:none;
+    user-select:none;
+    -moz-user-select:none;
+    position:absolute;
+    height:720px;
+    width:360px;
+
+    box-shadow: 0px 20px 60px 0px rgba(255, 255, 255, 0.23);
+    background:#fcfcfc;
+    -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    -moz-transform-style:preserve-3d;
+    text-align:center;
+    border:12px white solid;
+    box-sizing:border-box;
+    border-bottom:55px white solid;
+    border-radius:5px;
+}
+
+.transition {
+    -webkit-transition: cubic-bezier(0,1.95,.49,.73) .4s ;
+    -moz-transition: cubic-bezier(0,1.95,.49,.73) .4s ;
+    transition: cubic-bezier(0,1.95,.49,.73) .4s ;
+}
+
+h1 {
+    opacity: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10vh;
+    letter-spacing: 1vw;
+    position: absolute;
+    top: 10px;
+    transform: translateX(-50%);
+    color: white;
+    background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNZoHmjzzCJJLS8UceQzRvyEoc1lNT03-aTg&usqp=CAU');
+    background-size: auto 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 8s linear infinite;
+    transition: 1.5s;
+}
+
+@keyframes shine {
+    from {
+      background-position: center 0;
+    }
+    to {
+      background-position: center 200%;
+    }
+}
+
+header{
+    margin: 0;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .slider{
+        width: auto;
+        height: 720px;
+        margin: 0;
+        padding: 0;
+        bottom: 70px;
+        position: relative;
+    }
+
+    .slide{
+        height:530px;
+        width:260px;
+    }
+
+    h1 {
+        top: 0;
+    }
+
+    html{
+        background-image: linear-gradient( #0f0c29, #302b63, #24243e);
+    }
+
+    p{
+        margin-bottom: 0;
+    }
+}
